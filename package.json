@@ -150,7 +150,7 @@
     "clsx": "^2.1.1",
     "cmdk": "1.0.4",
     "date-fns": "^3.6.0",
-    "electron-store": "^10.0.0",
+    "electron-store": "^10.1.0",
     "embla-carousel-react": "8.6.0",
     "form-data": "^4.0.2",
     "framer-motion": "^12.15.0",

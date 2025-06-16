@@ -1,0 +1,11 @@
+# Global code owners
+* @JSB2010
+
+# Package management files - for dependency updates
+package.json @JSB2010
+package-lock.json @JSB2010
+pnpm-lock.yaml @JSB2010
+yarn.lock @JSB2010
+
+# GitHub Actions workflows
+.github/workflows/ @JSB2010

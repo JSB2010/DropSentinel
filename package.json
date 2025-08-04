@@ -163,7 +163,7 @@
     "react-dom": "^19",
     "react-hook-form": "^7.59.0",
     "react-resizable-panels": "^3.0.3",
-    "recharts": "3.0.2",
+    "recharts": "3.1.0",
     "sonner": "^1.7.1",
     "sqlite3": "^5.1.7",
     "styled-jsx": "^5.1.7",

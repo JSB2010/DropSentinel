@@ -7,5 +7,8 @@ package-lock.json @JSB2010
 pnpm-lock.yaml @JSB2010
 yarn.lock @JSB2010
 
+# Dependabot configuration - for dependabot updates
+.github/dependabot.yml @JSB2010
+
 # GitHub Actions workflows
 .github/workflows/ @JSB2010

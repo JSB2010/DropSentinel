@@ -1,3 +1,4 @@
+---
 version: 2
 updates:
   # Enable version updates for npm
@@ -9,6 +10,9 @@ updates:
       time: "09:00"
     assignees:
       - "JSB2010"
+    labels:
+      - "dependencies"
+      - "automated"
     commit-message:
       prefix: "deps"
       include: "scope"
@@ -47,6 +51,9 @@ updates:
       time: "09:00"
     assignees:
       - "JSB2010"
+    labels:
+      - "dependencies"
+      - "automated"
     commit-message:
       prefix: "ci"
       include: "scope"

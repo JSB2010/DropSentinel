@@ -39,10 +39,10 @@ jobs:
 
     steps:
     - name: Check out Git repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Install Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v6
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
@@ -84,10 +84,10 @@ jobs:
 
     steps:
     - name: Check out Git repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Install Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v6
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
@@ -121,7 +121,7 @@ jobs:
         echo "✅ macOS build dependencies setup complete"
 
     - name: Setup build cache
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: |
           ${{ env.ELECTRON_CACHE }}
@@ -236,7 +236,7 @@ jobs:
         ELECTRON_BUILDER_COMPRESSION_LEVEL: 9
 
     - name: Upload macOS artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: macos-release-${{ needs.validate.outputs.version }}
         path: |
@@ -253,16 +253,16 @@ jobs:
 
     steps:
     - name: Check out Git repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Install Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v6
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
 
     - name: Setup build cache
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: |
           ~\AppData\Local\electron
@@ -344,7 +344,7 @@ jobs:
         ELECTRON_BUILDER_COMPRESSION_LEVEL: 9
 
     - name: Upload Windows artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: windows-release-${{ needs.validate.outputs.version }}
         path: |
@@ -361,16 +361,16 @@ jobs:
 
     steps:
     - name: Check out Git repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Install Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v6
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
 
     - name: Setup build cache
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: |
           ${{ env.ELECTRON_CACHE }}
@@ -453,7 +453,7 @@ jobs:
         ELECTRON_BUILDER_COMPRESSION_LEVEL: 9
 
     - name: Upload Linux artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: linux-release-${{ needs.validate.outputs.version }}
         path: |
@@ -472,10 +472,10 @@ jobs:
 
     steps:
     - name: Check out Git repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Download all artifacts
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v8
       with:
         path: release-artifacts/
 
@@ -549,7 +549,7 @@ jobs:
         EOF
 
     - name: Create Release
-      uses: softprops/action-gh-release@v2
+      uses: softprops/action-gh-release@v3
       with:
         tag_name: ${{ needs.validate.outputs.tag }}
         name: DropSentinel ${{ needs.validate.outputs.tag }}
@@ -562,7 +562,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
     - name: Trigger release analytics
-      uses: peter-evans/repository-dispatch@v3
+      uses: peter-evans/repository-dispatch@v4
       with:
         token: ${{ secrets.GH_TOKEN }}
         event-type: release-analytics
